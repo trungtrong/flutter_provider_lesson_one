@@ -1,8 +1,12 @@
-import 'package:flutter_provider_lesson_one/core/services/api.dart';
-import 'package:flutter_provider_lesson_one/core/services/authentication_service.dart';
-import 'package:flutter_provider_lesson_one/core/viewmodels/home_provider.dart';
+import 'package:flutter_provider_lesson_one/core/services/posts_service.dart';
+import 'package:flutter_provider_lesson_one/core/viewmodels/like_button_provider.dart';
+import 'package:flutter_provider_lesson_one/core/viewmodels/posts_provider.dart';
 import 'package:get_it/get_it.dart';
 //
+import 'package:flutter_provider_lesson_one/core/services/api.dart';
+import 'package:flutter_provider_lesson_one/core/services/authentication_service.dart';
+import 'package:flutter_provider_lesson_one/core/viewmodels/comments_provider.dart';
+import 'package:flutter_provider_lesson_one/core/viewmodels/home_provider.dart';
 import 'package:flutter_provider_lesson_one/core/viewmodels/login_provider.dart';
 
 GetIt locator = GetIt.instance;
@@ -20,8 +24,11 @@ void setupLocator() {
   // global for app
   locator.registerLazySingleton(() => ApiService());
   locator.registerLazySingleton(() => AuthenticationService());
+  locator.registerLazySingleton(() => PostsService());
 
   // following screen
   locator.registerFactory(() => LoginProvider());
   locator.registerFactory(() => HomeProvider());
+  locator.registerFactory(() => LikeButtonProvider());
+  locator.registerFactory(() => CommentsProvider());
 }

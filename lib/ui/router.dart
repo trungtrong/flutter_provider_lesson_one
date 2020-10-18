@@ -4,7 +4,6 @@ import 'package:flutter_provider_lesson_one/core/models/post.dart';
 import 'package:flutter_provider_lesson_one/ui/views/home_view.dart';
 import 'package:flutter_provider_lesson_one/ui/views/login_view.dart';
 import 'package:flutter_provider_lesson_one/ui/views/post_view.dart';
-
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {

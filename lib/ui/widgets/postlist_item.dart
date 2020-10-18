@@ -4,6 +4,7 @@ import 'package:flutter_provider_lesson_one/core/models/post.dart';
 class PostListItem extends StatelessWidget {
   final Post post;
   final Function onTap;
+
   const PostListItem({this.post, this.onTap});
 
   @override
@@ -25,7 +26,11 @@ class PostListItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(post.title, style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),),
+            Text(
+              '${post.title} - ${post.likes.toString()}',
+              maxLines: 2,
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),
+            ),
             Text(post.body, maxLines: 2, overflow: TextOverflow.ellipsis)
           ],
         ),
